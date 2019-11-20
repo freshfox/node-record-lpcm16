@@ -1,5 +1,5 @@
 module.exports = (options) => {
-  const cmd = 'sox'
+  let cmd = 'sox'
 
   let args = [
     '--default-device',
@@ -11,6 +11,10 @@ module.exports = (options) => {
     '--type', options.audioType, // audio type
     '-' // pipe
   ]
+
+  if (options.binPath) {
+    cmd = options.binPath;
+  }
 
   if (options.endOnSilence) {
     args = args.concat([
