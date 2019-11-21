@@ -1,6 +1,10 @@
 module.exports = (options) => {
   let cmd = 'sox'
 
+  if (options.binPath) {
+    cmd = options.binPath;
+  }
+
   let args = [
     '--default-device',
     '--no-show-progress', // show no progress
@@ -11,10 +15,6 @@ module.exports = (options) => {
     '--type', options.audioType, // audio type
     '-' // pipe
   ]
-
-  if (options.binPath) {
-    cmd = options.binPath;
-  }
 
   if (options.endOnSilence) {
     args = args.concat([
