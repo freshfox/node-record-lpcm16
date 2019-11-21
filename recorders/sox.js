@@ -23,6 +23,10 @@ module.exports = (options) => {
     ])
   }
 
+  if (options.arguments) {
+    args = args.concat(options.arguments);
+  }
+
   const spawnOptions = { }
 
   if (options.device) {
