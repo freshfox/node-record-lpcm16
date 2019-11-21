@@ -16,6 +16,10 @@ module.exports = (options) => {
     '-' // pipe
   ]
 
+  if (options.bufferSize) {
+    args.push('--buffer', options.bufferSize);
+  }
+
   if (options.endOnSilence) {
     args = args.concat([
       'silence', '1', '0.1', options.thresholdStart || options.threshold + '%',

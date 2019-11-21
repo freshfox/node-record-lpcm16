@@ -19,6 +19,7 @@ class Recording {
       endOnSilence: false,
       audioType: 'wav',
       binPath: null,
+      bufferSize: null,
       arguments: [],
     }
 
