@@ -34,7 +34,10 @@ class Recording {
 
     debug(`Started recording`)
     debug(this.options)
-    debug(` ${this.cmd} ${this.args.join(' ')}`)
+
+    const command = ` ${this.cmd} ${this.args.join(' ')}`;
+    debug(command);
+    console.log('Running SOX', command);
 
     return this.start()
   }
